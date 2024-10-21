@@ -1,0 +1,264 @@
+/* ========== Variables de Colores ========== */
+:root {
+  --primary-color: #2c3e50; /* Un color oscuro moderno */
+  --secondary-color: #ecf0f1; /* Un gris claro para buen contraste */
+  --sidebar-bg-color: #34495e; /* Un azul grisáceo para el sidebar */
+  --hover-color: #95a5a6; /* Gris suave para hover */
+  --highlight-color: #1abc9c; /* Verde vibrante para elementos destacados */
+  --text-color: #ffffff; /* Blanco para contrastar en texto */
+  --border-color: #dcdde1; /* Un gris claro para bordes */
+  --button-bg-color: #1abc9c; /* Fondo de botones */
+  --button-text-color: #ffffff; /* Texto de botones en blanco */
+}
+
+/* ========== Reset CSS ========== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #ecf0f1; /* Fondo más suave */
+  color: var(--primary-color); /* Texto en color primario */
+  font-family: 'Roboto', sans-serif;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+header {
+  background-color: var(--sidebar-bg-color); /* Fondo oscuro para header */
+  padding: 15px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombras suaves */
+}
+
+header h1 {
+  color: var(--text-color);
+  font-size: 1.8em;
+}
+
+/* ========== Sidebar ========== */
+.sidebar {
+  background-color: var(--sidebar-bg-color);
+  color: var(--secondary-color);
+  padding: 30px;
+  width: 250px;
+  height: 100vh;
+  overflow-y: auto;
+  transition: background-color 0.3s ease, width 0.3s ease;
+}
+
+.sidebar h2 {
+  font-size: 1.5em;
+  margin-bottom: 20px;
+}
+
+.sidebar ul {
+  list-style-type: none;
+}
+
+.sidebar ul li {
+  margin-bottom: 15px;
+}
+
+.sidebar ul li a {
+  color: var(--secondary-color);
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.sidebar ul li a:hover {
+  color: var(--highlight-color);
+  text-decoration: none; /* Sin subrayado para un look limpio */
+}
+
+/* ========== Contenido Principal ========== */
+.main-content {
+  flex-grow: 1;
+  padding: 40px;
+  background-color: var(--secondary-color);
+}
+
+.main-content h2 {
+  font-size: 2.5em;
+  margin-bottom: 30px;
+  color: var(--primary-color);
+}
+
+.main-content img {
+  max-width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.table-container {
+  margin-top: 40px;
+}
+
+.car-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 25px;
+  margin-top: 30px;
+}
+
+.car-item {
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  overflow: hidden;
+  width: 31%;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.car-item:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.car-item img {
+  width: 100%;
+  height: auto;
+}
+
+.car-info {
+  padding: 15px;
+  background-color: var(--text-color);
+  color: var(--primary-color);
+}
+
+/* ========== Footer ========== */
+footer {
+  background-color: var(--primary-color);
+  color: var(--text-color);
+  padding: 40px 0;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+  border-top: 1px solid var(--border-color);
+}
+
+.footer .social-media a {
+  color: var(--secondary-color);
+  font-size: 24px;
+  transition: color 0.3s ease;
+}
+
+.footer .social-media a:hover {
+  color: var(--highlight-color);
+}
+
+.footer .company-info {
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+/* ========== Botones ========== */
+.button {
+  background-color: var(--button-bg-color);
+  color: var(--button-text-color);
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.button:hover {
+  background-color: darken(var(--button-bg-color), 10%);
+  cursor: pointer;
+}
+
+/* ========== Media Queries ========== */
+@media (max-width: 992px) {
+  .sidebar {
+    width: 220px;
+  }
+
+  .car-item {
+    width: 48%;
+  }
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    width: 100%;
+    position: relative;
+    top: 0;
+  }
+
+  .car-item {
+    width: 100%;
+  }
+}
+
+/* ========== Estilos del Slidebar (de Slidebar.css) ========== */
+.sidebar {
+  background-color: var(--sidebar-bg-color);
+  color: var(--secondary-color);
+  padding: 30px;
+  width: 250px;
+  height: 100vh;
+  overflow-y: auto;
+  position: fixed; /* Fijamos la posición */
+  top: 0; /* Posición desde la parte superior */
+  left: 0; /* Posición a la izquierda */
+  transition: background-color 0.3s ease, width 0.3s ease;
+}
+
+.sidebar ul {
+  list-style-type: none;
+}
+
+.sidebar ul li {
+  margin-bottom: 15px;
+}
+
+.sidebar ul li a {
+  color: var(--secondary-color);
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.sidebar ul li a:hover {
+  color: var(--highlight-color);
+  text-decoration: none;
+}
+
+.main-content {
+  margin-left: 250px; /* Espacio reservado para el sidebar */
+  padding: 40px;
+  background-color: var(--secondary-color);
+}
+
+header {
+  position: fixed; /* Fijamos el header en la parte superior */
+  top: 0;
+  left: 250px; /* Ajuste para que no quede debajo del sidebar */
+  width: calc(100% - 250px); /* Calculamos el ancho del header */
+  background-color: var(--sidebar-bg-color);
+  color: var(--secondary-color);
+  padding: 15px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+footer {
+  margin-left: 250px; /* Espacio para el sidebar */
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+  padding: 30px 0;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+  border-top: 1px solid var(--border-color);
+}
